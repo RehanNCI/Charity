@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Connect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f4f7;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Hero Section with Background Image */
+        header {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('image.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 6rem 1rem 5rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            animation: slideIn 1s ease-out;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Floating Donation Icon */
+        .floating-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+        }
+
+        nav a {
+            color: white;
+            padding: 1rem 2rem;
+            display: block;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #4CAF50;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        section h2 {
+            color: #4CAF50;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        section h2::before {
+            content: "⭐";
+        }
+
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            padding: 0.8rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+        }
+
+        /* Contact List */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+
+        ul li::before {
+            content: "📧";
+        }
+
+        ul li:nth-child(2)::before {
+            content: "📞";
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #333;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                padding: 0.8rem;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            .floating-icon {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Charity Connect</h1>
+        <p>Help provide for people in need by giving your unused items a new home.</p>
+        <div class="floating-icon">🎁</div>
+    </header>
+
+    <nav>
+        <a href="#donate">Donate Items</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="donate">
+            <h2>Donate Items</h2>
+            <p>Every item counts! Fill out the form below and we’ll connect your donation to someone who truly needs it.</p>
+            <form>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="item">Item to Donate:</label>
+                <input type="text" id="item" name="item" placeholder="What would you like to donate?" required>
+
+                <label for="message">Message (optional):</label>
+                <textarea id="message" name="message" rows="4" placeholder="Any message for the recipient?"></textarea>
+
+                <button type="submit">Submit Donation</button>
+            </form>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need help, reach out to us:</p>
+            <ul>
+                <li>Email: <a href="mailto:info@charityconnect.org">info@charityconnect.org</a></li>
+                <li>Phone: +123 456 7890</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Charity Connect</p>
+    </footer>
+</body>
+</html>
